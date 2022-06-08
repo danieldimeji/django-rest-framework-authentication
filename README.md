@@ -19,6 +19,7 @@ $ python manage.py runserver
 ```
 ## Docs
 
+* Django https://www.djangoproject.com/
 * Django REST framework https://www.django-rest-framework.org/
 * Django Simple JWT https://django-rest-framework-simplejwt.readthedocs.io/en/latest/
 
