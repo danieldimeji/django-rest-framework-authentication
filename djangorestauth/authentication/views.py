@@ -19,7 +19,6 @@ class SignUpAPIView(GenericAPIView):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
 class LogInAPIView(TokenObtainPairView):
     serializer_class = LogInSerializer
 
