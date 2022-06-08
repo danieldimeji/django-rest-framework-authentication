@@ -5,6 +5,9 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 class SignUpSerializer(serializers.ModelSerializer):
 
+    first_name = serializers.CharField(max_length=128)
+    last_name = serializers.CharField(max_length=128)
+    email = serializers.EmailField()
     password = serializers.CharField(
         max_length=128, min_length=8, write_only=True)
 
@@ -23,13 +26,13 @@ class SignUpSerializer(serializers.ModelSerializer):
         return User.objects.create_user(**validated_data)
 
 
-class LoginSerializer(TokenObtainPairSerializer):
+class LogInSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
         token['first_name'] = user.first_name
         token['last_name'] = user.last_name
-        token['username'] = user.email
+        token['username'] = user.username
         token['email'] = user.email
         return token
     
