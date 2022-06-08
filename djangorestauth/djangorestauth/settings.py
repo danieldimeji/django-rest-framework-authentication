@@ -35,10 +35,14 @@ INSTALLED_APPS = [
 ]
 
 REST_FRAMEWORK = {
+
+    # Set REST FRAMEWORK to accept JWT as default authentication
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+
+# Configuration settings for REST Framework Simple JWT
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=30),

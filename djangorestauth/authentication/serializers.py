@@ -28,6 +28,7 @@ class SignUpSerializer(serializers.ModelSerializer):
 
 class LogInSerializer(TokenObtainPairSerializer):
 
+    
     username = serializers.CharField(max_length=128)
     password = serializers.CharField(max_length=128, min_length=8, write_only=True)
     
